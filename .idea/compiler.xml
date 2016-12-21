@@ -12,6 +12,8 @@
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
     <bytecodeTargetLevel>
+      <module name="CodeQuizServer_main" target="1.8" />
+      <module name="CodeQuizServer_test" target="1.8" />
       <module name="ExampleUndertow_main" target="1.8" />
       <module name="ExampleUndertow_test" target="1.8" />
     </bytecodeTargetLevel>

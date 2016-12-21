@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CodeQuizServer.iml" filepath="$PROJECT_DIR$/.idea/modules/CodeQuizServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExampleUndertow_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ExampleUndertow_main.iml" group="ExampleUndertow" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExampleUndertow_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ExampleUndertow_test.iml" group="ExampleUndertow" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CodeQuizServer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CodeQuizServer_main.iml" group="CodeQuizServer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CodeQuizServer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CodeQuizServer_test.iml" group="CodeQuizServer" />
     </modules>
   </component>
 </project>

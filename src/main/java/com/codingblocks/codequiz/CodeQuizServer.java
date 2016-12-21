@@ -14,17 +14,21 @@ public class CodeQuizServer {
     public static void main(String[] args) {
         Undertow server = Undertow.builder()
                 .setIoThreads(4)
-                .addHttpListener(6969, "localhost", new HttpHandler() {
-                    @Override
-                    public void handleRequest(HttpServerExchange exchange) throws Exception {
-                        exchange.getResponseSender().send("CodeQuiz API");
-                    }
-                })
+                .addHttpListener(6969, "localhost")
                 .setHandler(path()
-                    .addPrefixPath("/api/v1", new CodeQuizApiHandler()))
+                    .addPrefixPath("/api/v1", CodeQuizApiHandler.getInstance())
+                    .addPrefixPath("/", new DefaultHttpHandler()))
                 .build();
 
         server.start();
         System.out.println("Server started at http://localhost:6969");
+    }
+
+    static class DefaultHttpHandler implements HttpHandler {
+
+        @Override
+        public void handleRequest(HttpServerExchange exchange) throws Exception {
+            exchange.getResponseSender().send("Code Quiz API Server");
+        }
     }
 }

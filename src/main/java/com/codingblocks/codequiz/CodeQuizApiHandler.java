@@ -9,10 +9,13 @@ import io.undertow.server.handlers.PathHandler;
 public class CodeQuizApiHandler extends PathHandler {
 
     private static CodeQuizApiHandler cqh;
+    private CodeQuizApiHandler () {
+        //For singleton
+    }
 
     public static CodeQuizApiHandler getInstance () {
         if (cqh == null) {
-            CodeQuizApiHandler cqh = new CodeQuizApiHandler();
+            cqh = new CodeQuizApiHandler();
             cqh.addPrefixPath("/questions", new QuestionHandler());
         }
         return cqh;

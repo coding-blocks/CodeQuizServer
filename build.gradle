@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     compile group: 'io.undertow', name: 'undertow-core', version: '1.4.0.CR3'
+    compile 'io.github.benas:random-beans:3.4.0'
     //compile group: 'io.undertow', name: 'undertow-servlet', version: '1.4.0.CR3'
 }
 
