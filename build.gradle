@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin:'application'
+
+mainClassName = 'com.codingblocks.codequiz.CodeQuizServer'
+
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'io.undertow', name: 'undertow-core', version: '1.4.0.CR3'
+    //compile group: 'io.undertow', name: 'undertow-servlet', version: '1.4.0.CR3'
+}
+
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Implementation-Version': version,
+                'Main-Class': mainClassName
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
