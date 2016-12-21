@@ -3,7 +3,7 @@ apply plugin:'application'
 
 mainClassName = 'com.codingblocks.codequiz.CodeQuizServer'
 
-version = '1.0'
+version = '0.0.1'
 
 repositories {
     mavenCentral()
@@ -18,7 +18,7 @@ dependencies {
 //create a single Jar with all dependencies
 task fatJar(type: Jar) {
     manifest {
-        attributes 'Implementation-Title': 'Gradle Jar File Example',
+        attributes 'Implementation-Title': 'Code Quiz Server',
                 'Implementation-Version': version,
                 'Main-Class': mainClassName
     }
