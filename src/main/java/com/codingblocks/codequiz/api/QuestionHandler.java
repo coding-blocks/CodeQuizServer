@@ -2,21 +2,14 @@ package com.codingblocks.codequiz.api;
 
 import com.codingblocks.codequiz.models.Question;
 import com.google.gson.Gson;
-import com.sun.media.jfxmedia.logging.Logger;
 import io.github.benas.randombeans.EnhancedRandomBuilder;
 import io.github.benas.randombeans.api.EnhancedRandom;
-import io.undertow.predicate.Predicate;
-import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
-import io.undertow.server.handlers.PathHandler;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by championswimmer on 21/12/16.
@@ -47,7 +40,6 @@ public class QuestionHandler extends RoutingHandler {
         exchange.getResponseSender().send(gson.toJson(questions));
 
     }
-
 
 
 }
