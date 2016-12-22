@@ -16,7 +16,7 @@ public class CodeQuizServer {
                 .setIoThreads(4)
                 .addHttpListener(6969, "localhost")
                 .setHandler(path()
-                    .addPrefixPath("/api/v1", CodeQuizApiHandler.getInstance())
+                    .addPrefixPath("/api/v1", new CodeQuizApiHandler())
                     .addPrefixPath("/", new DefaultHttpHandler()))
                 .build();
 

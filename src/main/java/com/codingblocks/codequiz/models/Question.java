@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Created by championswimmer on 21/12/16.
  */
-public class Question {
+public class Question  {
 
     String question;
     ArrayList<Option> options;
