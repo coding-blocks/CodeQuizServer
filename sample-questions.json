@@ -1,0 +1,548 @@
+{"results": [
+    {
+      "objectId": "IHSDmouLoO",
+      "options": [
+        {
+          "option": "10"
+        },
+        {
+          "option": "12"
+        },
+        {
+          "option": "11",
+          "correct": true
+        },
+        {
+          "option": "22"
+        }
+      ],
+      "question": "Which among the following is the correct output for this code snippet ? \n\n```\nint p = 10;  \nfor (int i = 0; i<12; i++);  \n{  \n  cout<<p++;  \n}  \n```",
+      "createdAt": "2016-10-18T02:02:50.445Z",
+      "updatedAt": "2016-12-01T12:04:50.140Z",
+      "tags": [
+        "cpp",
+        "loops"
+      ],
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      }
+    },
+    {
+      "objectId": "kCLGGc4kK3",
+      "options": [
+        {
+          "option": "n += 1;",
+          "correct": true
+        },
+        {
+          "option": "n = n+1;",
+          "correct": true
+        },
+        {
+          "option": "n++;"
+        },
+        {
+          "option": "++n;"
+        }
+      ],
+      "question": "What are the _correct_ ways to increment an integer in **C** ?   \nGiven this line of code already written -   \n\n``` \nint n = 10;\n```",
+      "createdAt": "2016-11-22T20:08:19.398Z",
+      "updatedAt": "2016-12-01T10:10:48.806Z",
+      "tags": [
+        "c",
+        " coding"
+      ],
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      }
+    },
+    {
+      "objectId": "ZCfDGbilup",
+      "options": [
+        {
+          "option": "functions",
+          "correct": true
+        },
+        {
+          "option": "classes",
+          "correct": true
+        },
+        {
+          "option": "operators",
+          "correct": true
+        },
+        {
+          "option": "keywords"
+        }
+      ],
+      "question": "Which of the following exhibit polymorphism ? \n",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-11-22T21:52:06.439Z",
+      "updatedAt": "2016-12-01T12:13:09.832Z",
+      "tags": [
+        "object oriented",
+        "oop"
+      ]
+    },
+    {
+      "objectId": "qTnPiKb5YC",
+      "options": [
+        {
+          "option": "Java",
+          "correct": true
+        },
+        {
+          "option": "C++",
+          "correct": true
+        },
+        {
+          "option": "Javascript"
+        },
+        {
+          "option": "Python"
+        }
+      ],
+      "question": "Which language(s) is/are statically typed ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-11-22T21:54:44.681Z",
+      "updatedAt": "2016-11-22T21:54:44.681Z"
+    },
+    {
+      "objectId": "hXMmk5erjU",
+      "options": [
+        {
+          "option": "Java"
+        },
+        {
+          "option": "Javascript",
+          "correct": true
+        },
+        {
+          "option": "Ruby",
+          "correct": true
+        },
+        {
+          "option": "C++"
+        }
+      ],
+      "question": "Which of these languages need not be compiled ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-11-22T21:57:25.471Z",
+      "updatedAt": "2016-12-01T12:12:04.370Z",
+      "tags": [
+        "languages",
+        "compilers"
+      ]
+    },
+    {
+      "objectId": "Hdda0V3DnY",
+      "options": [
+        {
+          "option": "98",
+          "correct": true
+        },
+        {
+          "option": "11",
+          "correct": true
+        },
+        {
+          "option": "14",
+          "correct": true
+        },
+        {
+          "option": "12"
+        }
+      ],
+      "tags": [
+        "cpp",
+        "language",
+        "versions"
+      ],
+      "question": "Which of the following are standard C++ versions ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-11-22T22:01:41.996Z",
+      "updatedAt": "2016-12-02T06:56:53.256Z"
+    },
+    {
+      "objectId": "k6KdUNsRsA",
+      "options": [
+        {
+          "option": "Bjarne Soustroup",
+          "correct": true
+        },
+        {
+          "option": "Dennis Ritchie"
+        },
+        {
+          "option": "Steve Jobs"
+        },
+        {
+          "option": "James Gostling"
+        }
+      ],
+      "tags": [
+        "language",
+        " history"
+      ],
+      "question": "Who was the founder of the language **C++** ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-11-30T12:13:44.989Z",
+      "updatedAt": "2016-11-30T12:13:44.989Z"
+    },
+    {
+      "objectId": "AQqH6vCDsG",
+      "options": [
+        {
+          "option": "1993"
+        },
+        {
+          "option": "1994"
+        },
+        {
+          "option": "1995",
+          "correct": true
+        },
+        {
+          "option": "1996"
+        }
+      ],
+      "tags": [
+        "java",
+        " history"
+      ],
+      "question": "When was **Java** released ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-11-30T14:18:05.578Z",
+      "updatedAt": "2016-11-30T14:19:03.698Z"
+    },
+    {
+      "objectId": "Y7B0cvRUDJ",
+      "options": [
+        {
+          "option": "_heap_ sort",
+          "correct": true
+        },
+        {
+          "option": "_merge_ sort",
+          "correct": true
+        },
+        {
+          "option": "_tray_ sort"
+        },
+        {
+          "option": "_selection_ sort",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "algorithms"
+      ],
+      "question": "Which of the following are sorting algorithms ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-12-01T12:14:36.978Z",
+      "updatedAt": "2016-12-01T12:14:36.978Z"
+    },
+    {
+      "objectId": "yboD83yjoW",
+      "options": [
+        {
+          "option": "V8",
+          "correct": true
+        },
+        {
+          "option": "ChakraCore",
+          "correct": true
+        },
+        {
+          "option": "Trident"
+        },
+        {
+          "option": "Gecko"
+        }
+      ],
+      "tags": [
+        "nodejs",
+        "languages"
+      ],
+      "question": "Which engines can be used to run Node.JS ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-12-01T12:20:39.012Z",
+      "updatedAt": "2016-12-01T12:20:39.012Z"
+    },
+    {
+      "objectId": "65roRnwnNE",
+      "options": [
+        {
+          "option": "C++"
+        },
+        {
+          "option": "C#"
+        },
+        {
+          "option": "Objective-C",
+          "correct": true
+        },
+        {
+          "option": "D"
+        }
+      ],
+      "tags": [
+        "languages"
+      ],
+      "question": "Which language(s) is/are strict supersets of the **C** language ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-12-02T06:51:45.383Z",
+      "updatedAt": "2016-12-02T06:51:45.383Z"
+    },
+    {
+      "objectId": "NEMKb8GdjS",
+      "options": [
+        {
+          "option": "Java",
+          "correct": true
+        },
+        {
+          "option": "C++"
+        },
+        {
+          "option": "C",
+          "correct": true
+        },
+        {
+          "option": "Javascript"
+        }
+      ],
+      "tags": [
+        "cpp",
+        "java",
+        "coding"
+      ],
+      "question": "In which languages is this code valid ? \n\n```\nint n = 10;  \nint arr[n];\n```",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-12-02T06:53:04.535Z",
+      "updatedAt": "2016-12-02T06:53:04.535Z"
+    },
+    {
+      "objectId": "7hkQaUxFjk",
+      "options": [
+        {
+          "option": "`#include`",
+          "correct": true
+        },
+        {
+          "option": "`#define`",
+          "correct": true
+        },
+        {
+          "option": "`#error`",
+          "correct": true
+        },
+        {
+          "option": "`#warning`"
+        }
+      ],
+      "tags": [
+        "cpp"
+      ],
+      "question": "Which of the following are valid _preprocesser directives_ in C++ ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-12-02T06:56:19.197Z",
+      "updatedAt": "2016-12-02T21:59:41.441Z"
+    },
+    {
+      "objectId": "6MN9Gqgikh",
+      "options": [
+        {
+          "option": "46"
+        },
+        {
+          "option": "86",
+          "correct": true
+        },
+        {
+          "option": "48"
+        },
+        {
+          "option": "88"
+        }
+      ],
+      "tags": [
+        "number system"
+      ],
+      "question": "What is correct decimal representation of the following binary number ?   \n\n`1010110`",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-12-02T07:00:21.441Z",
+      "updatedAt": "2016-12-02T07:00:21.441Z"
+    },
+    {
+      "objectId": "u5d7hVDn9B",
+      "options": [
+        {
+          "option": "1110000",
+          "correct": true
+        },
+        {
+          "option": "1101000"
+        },
+        {
+          "option": "1011000"
+        },
+        {
+          "option": "1111000"
+        }
+      ],
+      "tags": [
+        "number system"
+      ],
+      "question": "What is the correct binary representation of decimal number **112** ? ",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-12-02T07:01:40.741Z",
+      "updatedAt": "2016-12-02T07:01:40.741Z"
+    },
+    {
+      "objectId": "GvBtfpjcpp",
+      "options": [
+        {
+          "option": "Scala",
+          "correct": true
+        },
+        {
+          "option": "Kotlin",
+          "correct": true
+        },
+        {
+          "option": "Python"
+        },
+        {
+          "option": "Ruby"
+        }
+      ],
+      "tags": [
+        "java",
+        "languages"
+      ],
+      "question": "Which of these languages work on the JVM",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "0AS3Ojtva6"
+      },
+      "createdAt": "2016-12-02T21:55:45.630Z",
+      "updatedAt": "2016-12-02T21:55:45.630Z"
+    },
+    {
+      "objectId": "pBcWsflc0e",
+      "options": [
+        {
+          "option": "hi",
+          "correct": true
+        },
+        {
+          "option": "hello"
+        },
+        {
+          "option": "no"
+        },
+        {
+          "option": "None of the above"
+        }
+      ],
+      "tags": [
+        "C"
+      ],
+      "question": "The output of the code below is\n\n```\nvoid main()  \n{  \n\tint x = 5;  \n\tif (x < 1)  \n\t\tprintf(\"hello\");  \n\tif (x == 5)  \n\t\tprintf(\"hi\");  \n\telse  \n\t\tprintf(\"no\");  \n}  \n```\n",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "d4TKu0LTuA"
+      },
+      "createdAt": "2016-12-02T21:56:16.806Z",
+      "updatedAt": "2016-12-02T21:56:16.806Z"
+    },
+    {
+      "objectId": "35fYkF6jsx",
+      "options": [
+        {
+          "option": "Lose",
+          "correct": true
+        },
+        {
+          "option": "Win"
+        },
+        {
+          "option": "Compilation Error"
+        },
+        {
+          "option": "None of the Above"
+        }
+      ],
+      "tags": [
+        "C"
+      ],
+      "question": "The output of the code below is\n\n```\nvoid main()  \n{  \n\tint x = 5;  \n\tx+=1;  \n\tif (x == 6);  \n\tx=0;  \n\tif (x==0)  \n\t\tprintf(\"Lose\");  \n\telse  \n\t\tprintf(\"Win\");  \n}  \n```\n",
+      "author": {
+        "__type": "Pointer",
+        "className": "_User",
+        "objectId": "d4TKu0LTuA"
+      },
+      "createdAt": "2016-12-02T21:59:49.374Z",
+      "updatedAt": "2016-12-02T21:59:49.374Z"
+    }
+  ]
+}
