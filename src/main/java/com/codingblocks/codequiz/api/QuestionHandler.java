@@ -1,5 +1,6 @@
 package com.codingblocks.codequiz.api;
 
+import com.codingblocks.codequiz.dummy_utils.DummyQuestions;
 import com.codingblocks.codequiz.models.Question;
 import com.google.gson.Gson;
 import io.github.benas.randombeans.EnhancedRandomBuilder;
@@ -19,6 +20,7 @@ public class QuestionHandler extends RoutingHandler {
 
     public QuestionHandler() {
         super();
+        this.get("/archive/{quesId}", this::GET_questionById);
         this.get("/archive", this::GET_archive);
         this.get("/today", this::GET_today);
         this.post("/add", this::POST_add);
@@ -30,19 +32,26 @@ public class QuestionHandler extends RoutingHandler {
     }
 
     private void GET_questionById(HttpServerExchange exchange) throws Exception {
-        exchange.getPathParameters().get("quesId");
-        //fetch the question
 
+        //TODO: Make this better
+        int id = exchange.getRequestURL().charAt(exchange.getRequestURL().length() - 1) - 48;
+        Question question = null;
+        ArrayList<Question> questions = DummyQuestions.getDummyQuestions();
+        for (int i = 0; i < questions.size(); i++) {
+            if (id == questions.get(i).getId()) {
+                question = questions.get(i);
+            }
+        }
+
+        Gson gson = new Gson();
+
+        exchange.getResponseSender().send(gson.toJson(question));
     }
 
 
     private void GET_archive(HttpServerExchange exchange) throws Exception {
-        EnhancedRandom random = EnhancedRandomBuilder.aNewEnhancedRandomBuilder()
-                .minCollectionSize(3).maxCollectionSize(5)
-                .build();
-        ArrayList<Question> questions = random.objects(Question.class, 10)
-                .filter(Objects::nonNull)
-                .collect(Collectors.toCollection(ArrayList<Question>::new));
+
+        ArrayList<Question> questions = DummyQuestions.getDummyQuestions();
         Gson gson = new Gson();
 
         exchange.getResponseSender().send(gson.toJson(questions));
