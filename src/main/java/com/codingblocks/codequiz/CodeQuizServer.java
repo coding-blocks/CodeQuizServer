@@ -19,7 +19,6 @@ public class CodeQuizServer {
                         .addPrefixPath("/api/v1", new CodeQuizApiHandler())
                         .addPrefixPath("/", new DefaultHttpHandler()))
                 .build();
-
         server.start();
         System.out.println("Server started at http://localhost:6969");
     }
@@ -28,6 +27,7 @@ public class CodeQuizServer {
 
         @Override
         public void handleRequest(HttpServerExchange exchange) throws Exception {
+            exchange.setStatusCode(201);
             exchange.getResponseSender().send("Code Quiz API Server");
         }
     }

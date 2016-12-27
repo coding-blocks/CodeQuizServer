@@ -4,6 +4,7 @@ import com.codingblocks.codequiz.models.Question;
 import com.google.gson.Gson;
 import io.github.benas.randombeans.EnhancedRandomBuilder;
 import io.github.benas.randombeans.api.EnhancedRandom;
+import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
 
@@ -20,13 +21,20 @@ public class QuestionHandler extends RoutingHandler {
         super();
         this.get("/archive", this::GET_archive);
         this.get("/today", this::GET_today);
-        this.setFallbackHandler(this::GET_archive);
+        this.post("/add", this::POST_add);
     }
 
 
     private void GET_today(HttpServerExchange exchange) throws Exception {
 
     }
+
+    private void GET_questionById(HttpServerExchange exchange) throws Exception {
+        exchange.getPathParameters().get("quesId");
+        //fetch the question
+
+    }
+
 
     private void GET_archive(HttpServerExchange exchange) throws Exception {
         EnhancedRandom random = EnhancedRandomBuilder.aNewEnhancedRandomBuilder()
@@ -38,6 +46,9 @@ public class QuestionHandler extends RoutingHandler {
         Gson gson = new Gson();
 
         exchange.getResponseSender().send(gson.toJson(questions));
+    }
+
+    private void POST_add(HttpServerExchange exchange) throws Exception {
 
     }
 

@@ -12,6 +12,7 @@
     <orderEntry type="library" name="Gradle: io.undertow:undertow-core:1.4.0.CR3" level="project" />
     <orderEntry type="library" name="Gradle: io.github.benas:random-beans:3.4.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.postgresql:postgresql:9.4.1212.jre7" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging:3.2.1.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.xnio:xnio-api:3.3.6.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.jboss.xnio:xnio-nio:3.3.6.Final" level="project" />
