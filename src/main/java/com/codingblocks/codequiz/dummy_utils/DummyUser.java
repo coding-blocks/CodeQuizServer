@@ -13,7 +13,7 @@ public class DummyUser {
     public static ArrayList<User> getUsers(){
         ArrayList<User> users = new ArrayList<>();
 
-        users.add(new User("Piyush",50,"123@gmail.com",0));
+        users.add(new User("Piyush",50,"piyushajmani5@gmail.com",0));
         users.add(new User("User2",30,"234@gmail.com",1));
         users.add(new User("User3",70,"453@gmail.com",2));
         users.add(new User("User4",100,"dfsv@gmail.com",3));
