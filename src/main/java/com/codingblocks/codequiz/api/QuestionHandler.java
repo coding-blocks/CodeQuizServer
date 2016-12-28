@@ -3,9 +3,6 @@ package com.codingblocks.codequiz.api;
 import com.codingblocks.codequiz.dummy_utils.DummyQuestions;
 import com.codingblocks.codequiz.models.Question;
 import com.google.gson.*;
-import io.github.benas.randombeans.EnhancedRandomBuilder;
-import io.github.benas.randombeans.api.EnhancedRandom;
-import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
 
@@ -13,8 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.stream.Collectors;
+
 
 /**
  * Created by championswimmer on 21/12/16.
@@ -37,10 +33,10 @@ public class QuestionHandler extends RoutingHandler {
             return;
         }
 
-        JsonObject object = (JsonObject) new JsonParser().parse(read(exchange)) ;
+        JsonObject object = (JsonObject) new JsonParser().parse(read(exchange));
         JsonArray filters = object.getAsJsonArray("filters");
         System.out.println(filters.get(0));
-        System.out.println(filters.get(filters.size()-1));
+        System.out.println(filters.get(filters.size() - 1));
         JsonElement sortBy = object.get("sortBy");
         System.out.println(sortBy);
 
@@ -80,14 +76,12 @@ public class QuestionHandler extends RoutingHandler {
         return body;
     }
 
-    private class ArchiveQuestionFilter {
-        ArrayList<String> filters;
-        String sortBy;
-    }
-
 
     private void GET_today(HttpServerExchange exchange) throws Exception {
+        Question question = DummyQuestions.getDummyQuestions().get(DummyQuestions.getDummyQuestions().size() - 1);
+        Gson gson = new Gson();
 
+        exchange.getResponseSender().send(gson.toJson(question));
     }
 
     private void GET_questionById(HttpServerExchange exchange) throws Exception {
