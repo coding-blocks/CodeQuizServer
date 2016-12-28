@@ -29,7 +29,7 @@ public class QuestionHandler extends RoutingHandler {
 
     private void POST_questionByFilter(HttpServerExchange exchange) throws Exception {
         if (exchange.isInIoThread()) {
-            exchange.dispatch(this);
+            exchange.dispatch(this::POST_questionByFilter);
             return;
         }
 
