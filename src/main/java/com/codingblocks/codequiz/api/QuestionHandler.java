@@ -44,7 +44,7 @@ public class QuestionHandler extends RoutingHandler {
         JsonElement sortBy = object.get("sortBy");
         System.out.println(sortBy);
 
-        
+
         ArrayList<Question> questions = DummyQuestions.getDummyQuestions();
         Gson gson = new Gson();
 

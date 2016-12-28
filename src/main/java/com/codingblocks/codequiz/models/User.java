@@ -11,10 +11,11 @@ public class User {
     private Integer score;
     private Integer unique_id;
 
-    public User(String name, Integer score, String email) {
+    public User(String name, Integer score, String email, Integer unique_id) {
         this.name = name;
         this.score = score;
         this.email = email;
+        this.unique_id = unique_id;
     }
 
     public String getName() {
