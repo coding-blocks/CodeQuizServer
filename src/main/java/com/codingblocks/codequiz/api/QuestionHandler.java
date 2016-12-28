@@ -78,7 +78,7 @@ public class QuestionHandler extends RoutingHandler {
 
 
     private void GET_today(HttpServerExchange exchange) throws Exception {
-        Question question = DummyQuestions.getDummyQuestions().get(DummyQuestions.getDummyQuestions().size() - 1);
+        Question question = DummyQuestions.getDummyQuestions().get(DummyQuestions.getDummyQuestions().size() - 2);
         Gson gson = new Gson();
 
         exchange.getResponseSender().send(gson.toJson(question));
