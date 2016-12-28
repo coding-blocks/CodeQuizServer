@@ -2,6 +2,7 @@ package com.codingblocks.codequiz.api;
 
 
 import com.codingblocks.codequiz.dummy_utils.DummyTip;
+import com.codingblocks.codequiz.models.Tip;
 import com.google.gson.Gson;
 import io.undertow.server.RoutingHandler;
 import io.undertow.server.HttpServerExchange;
@@ -16,7 +17,7 @@ public class TipHandler extends RoutingHandler {
     }
 
     private void GET_todayTip(HttpServerExchange exchange) throws Exception{
-        String tip = DummyTip.getTips().get(DummyTip.getTips().size()-1);
+        Tip tip = DummyTip.getTips().get(DummyTip.getTips().size()-1);
         Gson gson = new Gson();
         exchange.getResponseSender().send(gson.toJson(tip));
     }
