@@ -25,7 +25,7 @@ public class DummyQuestions {
         tags.add(new Topic("Java"));
         tags.add(new Topic("C++"));
 
-        Question question = new Question("What is abcd?",
+        Question question = new Question("Which among the following is the correct output for this code snippet ? \\n\\n```\\nint p = 10;  \\nfor (int i = 0; i<12; i++);  \\n{  \\n  cout<<p++;  \\n}  \\n```",
                 options, tags, "2016",0);
 
         return question;

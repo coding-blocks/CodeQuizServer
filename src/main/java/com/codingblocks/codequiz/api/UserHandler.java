@@ -16,6 +16,7 @@ public class UserHandler extends RoutingHandler {
     public UserHandler() {
         super();
         this.get("/list", this::GET_users);
+        this.get("/{userId}", this::GET_usersById);
     }
 
     private void GET_users(HttpServerExchange exchange) throws Exception {
@@ -23,5 +24,21 @@ public class UserHandler extends RoutingHandler {
 
         Gson gson = new Gson();
         exchange.getResponseSender().send(gson.toJson(users));
+    }
+
+    private void GET_usersById(HttpServerExchange exchange) throws Exception {
+        ArrayList<User> users = DummyUser.getUsers();
+        User response = null;
+        Integer id = (Integer.valueOf(exchange.getQueryParameters().get("userId").getFirst()));
+
+        for (User u : users) {
+            if (u.getUnique_id().equals(id)) {
+                response = u;
+                break;
+            }
+        }
+
+        Gson gson = new Gson();
+        exchange.getResponseSender().send(gson.toJson(response));
     }
 }
