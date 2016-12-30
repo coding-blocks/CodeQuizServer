@@ -1,44 +1,79 @@
 package com.codingblocks.codequiz.api;
 
 import com.codingblocks.codequiz.dummy_utils.DummyQuestions;
+import com.codingblocks.codequiz.models.Challenge;
 import com.codingblocks.codequiz.models.Question;
+import com.codingblocks.codequiz.models.Submission;
 import com.codingblocks.codequiz.models.User;
 import com.codingblocks.codequiz.utils.ReadQuery;
 import com.google.gson.*;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
 
-import javax.jws.soap.SOAPBinding;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
  * Created by piyush0 on 30/12/16.
  */
 public class ChallengeHandler extends RoutingHandler {
-    public ChallengeHandler(){
+    public ChallengeHandler() {
         super();
         this.post("/create", this::POST_createChallenge);
-        this.get("/{challengeId}", this::GET_getChallengeQuestions);
+        this.get("/{challengeId}", this::getChallengeQuestions);
+        this.post("/submit/{challengeId}", this::POST_submitChallenge);
+        this.get("/{challengeId}/result", this::GET_challengeResult);
     }
 
-    private void GET_getChallengeQuestions(HttpServerExchange exchange) throws Exception{
+    private void GET_myChallenges(HttpServerExchange exchange) throws Exception {
+        
+    }
+
+    private void GET_challengeResult(HttpServerExchange exchange) throws Exception {
+        int id = Integer.valueOf(exchange.getQueryParameters().get("challengeId").getFirst());
+
+        Gson gson = new Gson();
+
+        exchange.getResponseSender().send(gson.toJson(getChallenge(id)));
+    }
+
+    private Challenge getChallenge(Integer id) {
+
+        //TODO: Make this better.
+        return Challenge.getDummyChallenges().get(0);
+    }
+
+    private void POST_submitChallenge(HttpServerExchange exchange) throws Exception {
+        if (exchange.isInIoThread()) {
+            exchange.dispatch(this::POST_createChallenge);
+            return;
+        }
+        Gson gson = new Gson();
+
+        JsonElement object = new JsonParser().parse(ReadQuery.read(exchange));
+        Submission submission = gson.fromJson(object, Submission.class);
+        Integer id = Integer.valueOf(exchange.getQueryParameters().get("challengeId").getFirst());
+        registerSubmissionInDb(id, submission);
+    }
+
+    private void registerSubmissionInDb(Integer challengeId, Submission submission) {
+        //TODO:
+    }
+
+    private void getChallengeQuestions(HttpServerExchange exchange) throws Exception {
 
         int id = Integer.valueOf(exchange.getQueryParameters().get("challengeId").getFirst());
 
-        ArrayList<Question> questions = getQuestionsBasedOnCid(id);
+        ArrayList<Question> questions = getChallengeQuestions(id);
         Gson gson = new Gson();
 
         exchange.getResponseSender().send(gson.toJson(questions));
     }
 
-    private ArrayList<Question> getQuestionsBasedOnCid(Integer id) {
-        return DummyQuestions.getDummyQuestions(); //TODO: Make this better.
+    private ArrayList<Question> getChallengeQuestions(Integer challengeId) {
+        return DummyQuestions.getDummyQuestions();
     }
 
-    private void POST_createChallenge(HttpServerExchange exchange) throws Exception{
+    private void POST_createChallenge(HttpServerExchange exchange) throws Exception {
         if (exchange.isInIoThread()) {
             exchange.dispatch(this::POST_createChallenge);
             return;
@@ -56,18 +91,18 @@ public class ChallengeHandler extends RoutingHandler {
 
     }
 
-    private ArrayList<User> getUsers(JsonArray users, Gson gson){
+    private ArrayList<User> getUsers(JsonArray users, Gson gson) {
         ArrayList<User> retVal = new ArrayList<>();
 
-        for(int i = 0 ; i<users.size(); i++) {
-            User u = gson.fromJson(users.get(i),User.class);
+        for (int i = 0; i < users.size(); i++) {
+            User u = gson.fromJson(users.get(i), User.class);
             retVal.add(u);
         }
 
         return retVal;
     }
 
-    private int getChallengeId(ArrayList<User> users, Integer numQues, String topic){
+    private int getChallengeId(ArrayList<User> users, Integer numQues, String topic) {
         return 1; // TODO: Make this better.
     }
 

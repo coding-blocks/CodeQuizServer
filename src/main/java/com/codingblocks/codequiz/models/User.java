@@ -18,6 +18,16 @@ public class User {
         this.unique_id = unique_id;
     }
 
+
+    public User(String name, Integer score, String email) {
+
+        this.name = name;
+        this.score = score;
+        this.email = email;
+
+    }
+
+
     public String getName() {
         return name;
     }
