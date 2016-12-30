@@ -7,9 +7,18 @@ import java.util.ArrayList;
  */
 public class Submission {
 
-    User user;
+
     Integer numCorrect;
     Long timeTaken;
+
+
+    public Integer getNumCorrect() {
+        return numCorrect;
+    }
+
+    public Long getTimeTaken() {
+        return timeTaken;
+    }
 
     public Submission() {
     }

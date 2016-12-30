@@ -47,15 +47,26 @@ public class ChallengeHandler extends RoutingHandler {
 
     private void POST_submitChallenge(HttpServerExchange exchange) throws Exception {
         if (exchange.isInIoThread()) {
-            exchange.dispatch(this::POST_createChallenge);
+            exchange.dispatch(this::POST_submitChallenge);
             return;
         }
         Gson gson = new Gson();
 
         JsonElement object = new JsonParser().parse(ReadQuery.read(exchange));
+        System.out.println(object);
         Submission submission = gson.fromJson(object, Submission.class);
         Integer id = Integer.valueOf(exchange.getQueryParameters().get("challengeId").getFirst());
+
+        /*User submitting this, will be in HEADER*/
+
         registerSubmissionInDb(id, submission);
+        Boolean success = true; // This will depend on Db.
+
+        System.out.println(submission.getChallengeId());
+        System.out.println(submission.getNumCorrect());
+        System.out.println(submission.getTimeTaken());
+
+        exchange.getResponseSender().send(gson.toJson(success));
     }
 
     private void registerSubmissionInDb(Integer challengeId, Submission submission) {
@@ -90,6 +101,7 @@ public class ChallengeHandler extends RoutingHandler {
 
         int cId = getChallengeId(users, numQues, topic);
         System.out.println(cId);
+        System.out.println(users);
 
         exchange.getResponseSender().send(gson.toJson(cId));
 
