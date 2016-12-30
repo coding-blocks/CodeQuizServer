@@ -1,5 +1,6 @@
 package com.codingblocks.codequiz;
 
+import com.codingblocks.codequiz.api.ChallengeHandler;
 import com.codingblocks.codequiz.api.QuestionHandler;
 import com.codingblocks.codequiz.api.TipHandler;
 import com.codingblocks.codequiz.api.UserHandler;
@@ -15,5 +16,6 @@ class CodeQuizApiHandler extends PathHandler {
         this.addPrefixPath("/questions", new QuestionHandler());
         this.addPrefixPath("/users", new UserHandler());
         this.addPrefixPath("/tips", new TipHandler());
+        this.addPrefixPath("/challenge", new ChallengeHandler());
     }
 }

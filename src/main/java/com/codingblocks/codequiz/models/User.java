@@ -37,4 +37,9 @@ public class User {
     public Integer getUnique_id() {
         return unique_id;
     }
+
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }

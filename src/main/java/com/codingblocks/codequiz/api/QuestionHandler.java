@@ -2,6 +2,9 @@ package com.codingblocks.codequiz.api;
 
 import com.codingblocks.codequiz.dummy_utils.DummyQuestions;
 import com.codingblocks.codequiz.models.Question;
+import com.codingblocks.codequiz.models.Topic;
+import com.codingblocks.codequiz.models.User;
+import com.codingblocks.codequiz.utils.ReadQuery;
 import com.google.gson.*;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
@@ -33,49 +36,34 @@ public class QuestionHandler extends RoutingHandler {
             return;
         }
 
-        JsonObject object = (JsonObject) new JsonParser().parse(read(exchange));
-        JsonArray filters = object.getAsJsonArray("filters");
-        System.out.println(filters.get(0));
-        System.out.println(filters.get(filters.size() - 1));
-        JsonElement sortBy = object.get("sortBy");
-        System.out.println(sortBy);
+        JsonObject object = (JsonObject) new JsonParser().parse(ReadQuery.read(exchange));
 
-
-        ArrayList<Question> questions = DummyQuestions.getDummyQuestions();
         Gson gson = new Gson();
+
+        ArrayList<Question> questions = getQuestionsBasedOnFilter(getFilters
+                        (object.getAsJsonArray("filters"), gson),
+                gson.fromJson(object.get("sortBy"), String.class));
+
 
         exchange.getResponseSender().send(gson.toJson(questions));
 
     }
 
-    private String read(HttpServerExchange exchange) {
-        BufferedReader reader = null;
-        StringBuilder builder = new StringBuilder();
+    private ArrayList<String> getFilters(JsonArray filters, Gson gson) {
 
-        try {
-            exchange.startBlocking();
-            reader = new BufferedReader(new InputStreamReader(exchange.getInputStream()));
+        ArrayList<String> retVal = new ArrayList<>();
 
-            String line;
-            while ((line = reader.readLine()) != null) {
-                builder.append(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+        for (int i = 0; i < filters.size(); i++) {
+            String topic = gson.fromJson(filters.get(i), String.class);
+            retVal.add(topic);
         }
 
-        String body = builder.toString();
-        return body;
+        return retVal;
     }
 
+    private ArrayList<Question> getQuestionsBasedOnFilter(ArrayList<String> filters, String sortBy) {
+        return DummyQuestions.getDummyQuestions();
+    }
 
     private void GET_today(HttpServerExchange exchange) throws Exception {
         Question question = DummyQuestions.getDummyQuestions().get(DummyQuestions.getDummyQuestions().size() - 2);

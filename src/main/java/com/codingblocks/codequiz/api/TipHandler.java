@@ -21,6 +21,4 @@ public class TipHandler extends RoutingHandler {
         Gson gson = new Gson();
         exchange.getResponseSender().send(gson.toJson(tip));
     }
-
-
 }
