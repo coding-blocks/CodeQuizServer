@@ -1,10 +1,8 @@
 package com.codingblocks.codequiz.api;
 
+import com.codingblocks.codequiz.dummy_utils.DummyChallenge;
 import com.codingblocks.codequiz.dummy_utils.DummyQuestions;
-import com.codingblocks.codequiz.models.Challenge;
-import com.codingblocks.codequiz.models.Question;
-import com.codingblocks.codequiz.models.Submission;
-import com.codingblocks.codequiz.models.User;
+import com.codingblocks.codequiz.models.*;
 import com.codingblocks.codequiz.utils.ReadQuery;
 import com.google.gson.*;
 import io.undertow.server.HttpServerExchange;
@@ -16,16 +14,21 @@ import java.util.ArrayList;
  * Created by piyush0 on 30/12/16.
  */
 public class ChallengeHandler extends RoutingHandler {
+
     public ChallengeHandler() {
         super();
         this.post("/create", this::POST_createChallenge);
         this.get("/{challengeId}", this::getChallengeQuestions);
         this.post("/submit/{challengeId}", this::POST_submitChallenge);
         this.get("/{challengeId}/result", this::GET_challengeResult);
+        this.get("/me", this::GET_myChallenges);
     }
 
     private void GET_myChallenges(HttpServerExchange exchange) throws Exception {
-        
+        ArrayList<ChallengeSmall> challengeSmall = DummyChallenge.getDummyChallengeSmalls();
+        Gson gson = new Gson();
+
+        exchange.getResponseSender().send(gson.toJson(challengeSmall));
     }
 
     private void GET_challengeResult(HttpServerExchange exchange) throws Exception {
@@ -39,7 +42,7 @@ public class ChallengeHandler extends RoutingHandler {
     private Challenge getChallenge(Integer id) {
 
         //TODO: Make this better.
-        return Challenge.getDummyChallenges().get(0);
+        return DummyChallenge.getDummyChallenges().get(0);
     }
 
     private void POST_submitChallenge(HttpServerExchange exchange) throws Exception {
@@ -82,27 +85,28 @@ public class ChallengeHandler extends RoutingHandler {
         JsonObject object = (JsonObject) new JsonParser().parse(ReadQuery.read(exchange));
 
         Integer numQues = gson.fromJson(object.get("numQues"), Integer.class);
-        ArrayList<User> users = getUsers(object.getAsJsonArray("users"), gson);
+        ArrayList<Integer> users = getUsers(object.getAsJsonArray("users"), gson);
         String topic = gson.fromJson(object.get("topic"), String.class);
 
         int cId = getChallengeId(users, numQues, topic);
+        System.out.println(cId);
 
         exchange.getResponseSender().send(gson.toJson(cId));
 
     }
 
-    private ArrayList<User> getUsers(JsonArray users, Gson gson) {
-        ArrayList<User> retVal = new ArrayList<>();
+    private ArrayList<Integer> getUsers(JsonArray users, Gson gson) {
+        ArrayList<Integer> retVal = new ArrayList<>();
 
         for (int i = 0; i < users.size(); i++) {
-            User u = gson.fromJson(users.get(i), User.class);
+            Integer u = gson.fromJson(users.get(i), Integer.class);
             retVal.add(u);
         }
 
         return retVal;
     }
 
-    private int getChallengeId(ArrayList<User> users, Integer numQues, String topic) {
+    private int getChallengeId(ArrayList<Integer> users, Integer numQues, String topic) {
         return 1; // TODO: Make this better.
     }
 
