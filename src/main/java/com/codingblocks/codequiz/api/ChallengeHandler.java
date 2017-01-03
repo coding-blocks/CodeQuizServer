@@ -62,7 +62,6 @@ public class ChallengeHandler extends RoutingHandler {
         registerSubmissionInDb(id, submission);
         Boolean success = true; // This will depend on Db.
 
-        System.out.println(submission.getChallengeId());
         System.out.println(submission.getNumCorrect());
         System.out.println(submission.getTimeTaken());
 

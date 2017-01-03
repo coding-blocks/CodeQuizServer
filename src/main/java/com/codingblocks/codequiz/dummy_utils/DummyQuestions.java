@@ -15,7 +15,7 @@ public class DummyQuestions {
         ArrayList<Option> options = new ArrayList<>();
 
 
-        options.add(new Option("This is a big text to check sizes", true));
+        options.add(new Option("op1", true));
         options.add(new Option("op2", false));
         options.add(new Option("op3", true));
         options.add(new Option("op4", false));
@@ -28,6 +28,8 @@ public class DummyQuestions {
         Question question = new Question("Which among the following is the correct output for this code snippet ? \\n\\n```\\nint p = 10;  \\nfor (int i = 0; i<12; i++);  \\n{  \\n  cout<<p++;  \\n}  \\n```",
                 options, tags, "2016",0);
 
+//        Question question = new Question("EFG",options,tags,"2016",0);
+
         return question;
     }
 
@@ -37,10 +39,10 @@ public class DummyQuestions {
         questions.add(getDummyQuestion());
         ArrayList<Option> options1 = new ArrayList<>();
 
-        options1.add(new Option("op1", true));
-        options1.add(new Option("op2", false));
-        options1.add(new Option("op3", false));
-        options1.add(new Option("op4", true));
+        options1.add(new Option("1op", true));
+        options1.add(new Option("2op", false));
+        options1.add(new Option("3op", false));
+        options1.add(new Option("4op", true));
 
         ArrayList<Topic> tags1 = new ArrayList<>();
         tags1.add(new Topic("Java"));
