@@ -7,12 +7,14 @@ const route = express.Router();
 const routes = {
     tips: require('./tips'),
     questions: require('./questions'),
-    challenge: require('./challenge')
+    challenge: require('./challenge'),
+    users: require('./users')
 };
 
 
 route.use('/tips', routes.tips);
 route.use('/questions', routes.questions);
 route.use('/challenge', routes.challenge);
+route.use('/users', routes.users);
 
 module.exports = route;
