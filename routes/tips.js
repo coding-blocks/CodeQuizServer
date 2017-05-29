@@ -6,8 +6,8 @@ const express = require('express');
 const route = express.Router();
 
 route.get('/todayTip', function (req, res) {
-    res.send("Put semicolon at the end")
+    let tips = require('../dummy_data/DummyTip');
+    res.send(tips[tips.length - 1]);
 });
-
 
 module.exports = route;
