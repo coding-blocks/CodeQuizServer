@@ -5,10 +5,12 @@ const express = require('express');
 
 const route = express.Router();
 const routes = {
-    tips: require('./tips')
+    tips: require('./tips'),
+    questions: require('./questions')
 };
 
 
 route.use('/tips', routes.tips);
+route.use('/questions', routes.questions);
 
 module.exports = route;
