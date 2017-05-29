@@ -1,11 +1,12 @@
-const express = require('express')
+const express = require('express');
 
 const app = express();
+const routes = {
+    api: require('./routes/api')
+}
 
-app.get('/', function (req, res) {
-    res.send("Hello server");
-})
+app.use('/api/v1', routes.api);
 
 app.listen(8080, function () {
     console.log("Server started on http://localhost:8080");
-})
+});
